@@ -17,6 +17,9 @@ export class MonopolyCard extends SimpleColors {
         border-layout: square;
         padding: 10px;
       }
+      .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+      }
       .outline {
         border-layout: square;
         border: 1px solid black;
@@ -50,31 +53,30 @@ export class MonopolyCard extends SimpleColors {
         return {
             itemdescription: { type: String },
             title: { type: String },
-            list: { type: Array },
-            listdetail: { type: Array },
-            bottomdetails: { type: String },
         };
     }
 
     constructor() {
         super();
         this.title = 'Title';
-        this.list = ["No List Given"];
     }
-
-    //<slot> tag
 
     render() {
             return html `
       <div class="card">
         <div class="outline">
           <div class="titleblock">
-            ${this.itemdescription ? html`<h4 class="itemdescription">${this.itemdescription}</h4></br>` : html``}
+            ${this.itemdescription ? html`<h4 class="itemdescription">${this.itemdescription}</h4>` : html``}
             <h1 class="title">${this.title}</h1>
           </div>
           <div class="listcontainer">
-          <div class="slotbody"><slot  name="body"></slot></div>
-          <div class="slotdetail"><slot  name="listdetail"></slot></div></div>
+            <div class="slotbody">
+              <slot  name="body"></slot>
+            </div>
+            <div class="slotdetail">
+              <slot  name="listdetail"></slot>
+            </div>
+          </div>
           <hr><slot name="bottomdetails"></slot>
         </div>
       </div>
