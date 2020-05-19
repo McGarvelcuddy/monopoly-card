@@ -1,29 +1,43 @@
 <!doctype html>
 <html lang="en-GB">
+
 <head>
-  <meta charset="utf-8">
-  <style>
-    body {
-      background: #fafafa;
-    }
-  </style>
+    <meta charset="utf-8">
+    <style>
+        body {
+            background: #fafafa;
+        }
+    </style>
 </head>
+
 <body>
-  <div id="demo"></div>
+    <monopoly-card itemdescription="Title Deed" title="Monopoly Card">
+        <ul slot="body" style="list-style-type: none; padding: 0;">
+            <li>foo</li>
+            <li>bar</li>
+            <li>baz</li>
+            <li>qux</li>
+            <li>quux</li>
+            <li>quuz</li>
+            <li>corge</li>
+            <li>grault</li>
+        </ul>
+        <ul slot="listdetail" style="list-style-type: none;">
+            <li>foo</li>
+            <li>bar</li>
+            <li>baz</li>
+            <li>qux</li>
+            <li>quux</li>
+            <li>quuz</li>
+            <li>corge</li>
+            <li>grault</li>
+        </ul>
+        <p slot="bottomdetails">There are many placeholders.</p>
+    </monopoly-card>
 
-  <script type="module">
-    import { html, render } from 'lit-html';
-    import '../monopoly-card.js';
-
-    const title = 'Hello owc World!';
-    render(
-      html`
-        <monopoly-card .title=${title}>
-          some more light-dom
-        </monopoly-card>
-      `,
-      document.querySelector('#demo')
-    );
-  </script>
+    <script type="module">
+        import { html, render} from 'lit-html'; import '../monopoly-card.js';
+    </script>
 </body>
+
 </html>
