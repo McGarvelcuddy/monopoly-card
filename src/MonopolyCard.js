@@ -1,8 +1,11 @@
 import { html, css, LitElement } from 'lit-element';
+import { SimpleColors } from '@lrnwebcomponents/simple-colors/simple-colors';
 
-export class MonopolyCard extends LitElement {
+export class MonopolyCard extends SimpleColors {
     static get styles() {
-        return css `
+        return [
+            ...super.styles,
+            css `
       :host {
         display: block;
         padding: 10px;
@@ -23,7 +26,7 @@ export class MonopolyCard extends LitElement {
         border-layout: square;
         border: 1px solid black;
         padding: 10px;
-        background-color: orange;
+        background-color: var(--simple-colors-default-theme-accent-5);
       }
       .listcontainer {
         display: flex;
@@ -39,7 +42,8 @@ export class MonopolyCard extends LitElement {
         flex: 0;
         text-align: right;
       }
-    `;
+    `
+        ];
     }
 
     static get properties() {
