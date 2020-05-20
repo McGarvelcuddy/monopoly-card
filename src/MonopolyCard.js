@@ -29,20 +29,19 @@ export class MonopolyCard extends SimpleColors {
         border-layout: square;
         border: 1px solid black;
         padding: 10px;
-        background-color: var(--simple-colors-default-theme-accent-5);
+        background-color: var(--simple-colors-default-theme-accent-8);
       }
       .listcontainer {
         display: flex;
       }
       .itemdescription, .title {
         text-align: center;
-        
+        color: var(--simple-colors-default-theme-accent-2);
       }
       .slotbody {
         flex: 1;
       }
       .slotdetail {
-        flex: 0;
         text-align: right;
       }
     `
@@ -74,7 +73,7 @@ export class MonopolyCard extends SimpleColors {
               <slot  name="body"></slot>
             </div>
             <div class="slotdetail">
-              <slot  name="listdetail"></slot>
+              <slot name="listdetail"></slot>
             </div>
           </div>
           <hr><slot name="bottomdetails"></slot>
