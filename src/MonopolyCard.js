@@ -34,6 +34,7 @@ export class MonopolyCard extends SimpleColors {
       .itemdescription, .title {
         text-align: center;
         color: var(--simple-colors-default-theme-accent-2);
+        font-family: var(--monopoly-card-font-family);
       }
       .itemdescription {
         font-size: 15px;
@@ -59,11 +60,11 @@ export class MonopolyCard extends SimpleColors {
             font: { type: String },
         };
     }
-
     constructor() {
         super();
         this.title = 'Title';
-        this.font = 'arial'
+        this.font = "times";
+
     }
 
     render() {
